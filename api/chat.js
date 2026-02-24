@@ -1,6 +1,6 @@
-import fetch from "node-fetch";
+const fetch = require("node-fetch");
 
-export default async function (context, req) {
+module.exports = async function (context, req) {
   const apiKey = process.env.FOUNDRY_API_KEY;
 
   if (!apiKey) {
@@ -34,4 +34,4 @@ export default async function (context, req) {
       reply: data.choices?.[0]?.message?.content ?? "(nessuna risposta)"
     }
   };
-}
+};
